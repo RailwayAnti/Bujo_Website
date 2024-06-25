@@ -17,7 +17,7 @@
       <nav>
         <a href="https://x.com/BujoFlow"><img src="./imgs/X.png" alt="Twitter"></a>
         <a href="https://www.instagram.com/bujo_flow/"><img src="./imgs/ins.png" alt="Instagram"></a>
-        <a href="https://www.producthunt.com/posts/bujoflow?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bujoflow"
+        <a class="hub" href="https://www.producthunt.com/posts/bujoflow?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bujoflow"
           target="_blank"><img
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=465455&theme=neutral"
             alt="BujoFlow - A&#0032;personal&#0032;growth&#0032;companion&#0032;based&#0032;on&#0032;the&#0032;Bullet&#0032;Journal&#0046; | Product Hunt"
@@ -34,7 +34,7 @@
       </div>
       <div class="hero-images" style="position: relative;">
         <img src="./imgs/iphone.png" alt="App Image 2">
-        <img src="./imgs/ipad.png" alt="App Image 1">
+        <img src="./imgs/ipad.png" class="hero_images_img" alt="App Image 1">
       </div>
     </div>
   </section>
@@ -91,7 +91,7 @@
         <div class="pricing-item">
           <h3>Free Plan</h3>
           <p>$0/month</p>
-          <ul>
+          <ul style="margin-bottom: 40px;">
             <li>Tasks, Notes & Events</li>
             <li>iCloud Sync</li>
             <li>Collections</li>
@@ -104,7 +104,7 @@
         <div class="pricing-item">
           <h3>Pro Plan</h3>
           <p>$1.99/month</p>
-          <ul>
+          <ul style="margin-bottom: 40px;">
             <li>Images</li>
             <li>Sub Tags</li>
             <li>Sub Collections</li>
@@ -126,7 +126,7 @@
           Bujo<span>Flow</span>
         </div>
 
-        <p>Copyright © 2024 BujoFlow All rights reserved</p>
+        <p class="hub">Copyright © 2024 BujoFlow All rights reserved</p>
         <div class="social">
           <a href="https://x.com/BujoFlow"><img src="./imgs/X.png" alt="Twitter"></a>
           <a href="https://www.instagram.com/bujo_flow/"><img src="./imgs/ins.png" alt="Instagram"></a>
@@ -242,6 +242,15 @@
     height: 400px;
     margin: 20px;
   }
+  @media (max-width: 700px) {
+    .hero_images_img {
+      height: 200px !important;
+      margin: 20px;
+    }
+    .hub{
+      display: none;
+    }
+  }
 
   .features {
     padding: 60px 20px;
@@ -267,6 +276,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex: 1;
+    min-width: 150px;
     max-width: 200px;
   }
 
@@ -412,9 +422,10 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 1;
-    max-width: 300px;
-    padding-bottom: 40px;
+    /* flex: 1; */
+    min-width: 280px;
+    max-width: 400px;
+    padding-bottom: 60px;
   }
 
   .pricing-item h3 {
