@@ -1,301 +1,456 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/x-icon" href="./imgs/favicon.ico" />
-  <meta name="generator" content="pandoc" />
-  <meta name="description" content="Bullet Journal, Notes, Events, Tasks, Reminders, Todo List, Bujo">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Bujo</title>
-  <style>
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      word-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 1em;
-        padding-top: 0px;
-      }
-    }
-
-    @media print {
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-
-      p,
-      h2,
-      h3 {
-        orphans: 3;
-        widows: 3;
-      }
-
-      h2,
-      h3,
-      h4 {
-        page-break-after: avoid;
-      }
-    }
-
-    p {
-      margin: 1em 0;
-    }
-
-    a {
-      color: #1a1a1a;
-    }
-
-    a:visited {
-      color: #1a1a1a;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-top: 1.4em;
-    }
-
-    h5,
-    h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-
-    h6 {
-      font-weight: normal;
-    }
-
-    ol,
-    ul {
-      padding-left: 1em;
-      margin-top: 1em;
-    }
-
-    li>ol,
-    li>ul {
-      margin-top: 0;
-    }
-
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-
-    code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      font-size: 85%;
-      margin: 0;
-    }
-
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-
-    pre code {
-      padding: 0;
-      overflow: visible;
-    }
-
-    .sourceCode {
-      background-color: transparent;
-      overflow: visible;
-    }
-
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-
-    table caption {
-      margin-bottom: 0.75em;
-    }
-
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-
-    #TOC li {
-      list-style: none;
-    }
-
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-
-    code {
-      white-space: pre-wrap;
-    }
-
-    span.smallcaps {
-      font-variant: small-caps;
-    }
-
-    span.underline {
-      text-decoration: underline;
-    }
-
-    div.column {
-      display: inline-block;
-      vertical-align: top;
-      width: 50%;
-    }
-
-    div.hanging-indent {
-      margin-left: 1.5em;
-      text-indent: -1.5em;
-    }
-
-    ul.task-list {
-      list-style: none;
-    }
-
-    .display.math {
-      display: block;
-      text-align: center;
-      margin: 0.5rem auto;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      html {
-        background-color: #000000;
-        color: white;
-      }
-      a {
-        color: #ffffff;
-      }
-
-      a:visited {
-        color: #ffffff;
-      }
-    }
-
-    .screnn_img{
-      width: 200px;
-      height: auto;
-      border-radius: 20px;
-      margin-right: 10px;
-    }
-    .screnn_img2{
-      width: 300px;
-      height: auto;
-      border-radius: 20px;
-      margin-right: 10px;
-    }
-    .screnn_block {
-      width: 100%;
-      overflow-x: auto;
-      display: flex;
-      align-items: center;
-      margin-top: -10px;
-      border-top: 1px solid #d6d6d6;
-      padding-top: 30px;
-      padding-bottom: 40px;
-    }
-  </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BujoFlow</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <header>
+    <div class="container">
+      <div class="logo">Bujo<span>Flow</span></div>
+      <nav>
+        <a href="https://x.com/BujoFlow"><img src="./imgs/X.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/bujo_flow/"><img src="./imgs/ins.png" alt="Instagram"></a>
+        <a href="https://www.producthunt.com/posts/bujoflow?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bujoflow"
+          target="_blank"><img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=465455&theme=neutral"
+            alt="BujoFlow - A&#0032;personal&#0032;growth&#0032;companion&#0032;based&#0032;on&#0032;the&#0032;Bullet&#0032;Journal&#0046; | Product Hunt"
+            style="width: 200px; height: 45px;" width="200" height="45" /></a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>Personal growth companion based on <span>Bullet Journal</span></h1>
+      <p>Quickly record tasks, events, and notes, as well as set goals, consolidating scattered notes.</p>
+      <div class="app-buttons">
+        <a href="https://apps.apple.com/us/app/id6499578629"><img src="./imgs/appstore.webp" alt="App Store"></a>
+      </div>
+      <div class="hero-images" style="position: relative;">
+        <img src="./imgs/iphone.png" alt="App Image 2">
+        <img src="./imgs/ipad.png" alt="App Image 1">
+      </div>
+    </div>
+  </section>
+  <section class="features">
+    <div class="container">
+      <h2>All Provided Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item">Tasks, Notes & Events</div>
+        <div class="feature-item">Daily Log</div>
+        <div class="feature-item">Monthly Log</div>
+        <div class="feature-item">Future Log</div>
+      </div>
+      <div class="feature-grid" style="margin-top: 20px;">
+        <div class="feature-item">Collections & Tags</div>
+        <div class="feature-item">iCloud Sync</div>
+        <div class="feature-item">Images & @</div>
+        <div class="feature-item">Excellent statistical</div>
+      </div>
+      <div class="feature-grid" style="margin-top: 20px;">
+        <div class="feature-item">Sub Tags</div>
+        <div class="feature-item">Dark Mode</div>
+        <div class="feature-item">Search</div>
+        <div class="feature-item">Sub Collections</div>
+      </div>
+    </div>
+  </section>
+  <section class="solution">
+    <div class="container">
+      <div style="width: 100%;text-align: center;">
+        <h2>Screenshots</h2>
+      </div>
+      <div class="solution-content">
+        <img src="./imgs/s1.jpg" alt="Man">
+        <img src="./imgs/s3.jpg" alt="Man">
+        <img src="./imgs/s4.jpg" alt="Man">
+        <img src="./imgs/s2.jpg" alt="Man">
+      </div>
+    </div>
+  </section>
+  <section class="introduction">
+    <div class="container">
+      <p>BujoFlow is a personal growth companion based on the Bullet Journal concept. </p>
+      <p>It is a task list, diary, planner,notepad, and can also be a notebook that encompasses all these features. </p>
+      <p>It allows us to quickly record tasks,events, and notes, as well as set goals, consolidating scattered notes.</p>
+      <p>It aims to help us track the past,manage the present, and plan for the future.</p>
+    </div>
+  </section>
+  <section class="pricing">
+    <div class="container">
+      <h2>Choose Your Plan</h2>
+      <div class="pricing-grid">
+        <div class="pricing-item">
+          <h3>Free Plan</h3>
+          <p>$0/month</p>
+          <ul>
+            <li>Tasks, Notes & Events</li>
+            <li>iCloud Sync</li>
+            <li>Collections</li>
+            <li>Tags</li>
+            <li>@</li>
+            <li>Search</li>
+          </ul>
+          <a href="https://apps.apple.com/us/app/id6499578629">Get Started</a>
+        </div>
+        <div class="pricing-item">
+          <h3>Pro Plan</h3>
+          <p>$1.99/month</p>
+          <ul>
+            <li>Images</li>
+            <li>Sub Tags</li>
+            <li>Sub Collections</li>
+            <li>Change Tags Icon</li>
+            <li>Change Collections Icon</li>
+            <li>Collections logo</li>
+          </ul>
+          <a href="https://apps.apple.com/us/app/id6499578629">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="logo" style="display: flex;align-items: center;">
+          <img style="width: 40px;height: 40px;border-radius: 10px;margin-right: 10px;" src="./imgs/logo_b.png" alt=""
+            srcset="">
+          Bujo<span>Flow</span>
+        </div>
 
-  <img src="./imgs/head.png" style="width: 100%;height: auto;">
-
-  <h1 style="margin-top: -1em;" id="欢迎使用Bujo">Welcome to Bujo</h1>
-
-  <a href="https://apps.apple.com/us/app/id6499578629" >
-    <img src="./imgs/appstore.webp" style="width: 150px;height: auto;margin-top: -15px;">
-  </a>
-
-  <h3>Screenshots</h3>
-
-  <div class="screnn_block" >
-    <img class="screnn_img2" src="./imgs/dailylog_pad.png">
-    <img class="screnn_img2" src="./imgs/moothly_pad.png">
-    <img class="screnn_img2" src="./imgs/futurelog_pad.png">
-  </div>
-
-  <div class="screnn_block">
-    <img class="screnn_img" src="./imgs/daily.png">
-    <img class="screnn_img" src="./imgs/monthly.png">
-    <img class="screnn_img" src="./imgs/future.png">
-    <img class="screnn_img" src="./imgs/info.png">
-    <img class="screnn_img" src="./imgs/tags.png">
-    <img class="screnn_img" src="./imgs/charts.png">
-  </div>
-
-  <p>BujoFlow is a personal growth companion based on the Bullet Journal concept.</p>
-  <p>It is a task list, diary, planner, notepad, and can also be a notebook that encompasses all these features.</p>
-  <p>It allows us to quickly record tasks, events, and notes, as well as set goals, consolidating scattered notes.</p>
-  <p>It aims to help us track the past, manage the present, and plan for the future.</p>
-
-  <h4>The main features of Bujo include the following:</h4>
-  <ul>
-    <li>Daily Log</li>
-    <li>Monthly Log</li>
-    <li>Future Log</li>
-    <li>Collections & Tags</li>
-    <li>iCloud Sync</li>
-    <li>Images & @</li>
-  </ul>
-  <h4>Contact</h4>
-  <a href="mailto:railwayanti@gmail.com?subject=Bujo Feedback">railwayanti@gmail.com</a>
+        <p>Copyright © 2023 BujoFlow All rights reserved</p>
+        <div class="social">
+          <a href="https://x.com/BujoFlow"><img src="./imgs/X.png" alt="Twitter"></a>
+          <a href="https://www.instagram.com/bujo_flow/"><img src="./imgs/ins.png" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
+
+<style>
+  /* styles.css */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+  }
+
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  header .logo span {
+    color: #4d81bb;
+  }
+
+  header nav {
+    display: flex;
+    align-items: center;
+  }
+
+  header nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  header nav img {
+    width: 30px;
+    height: 30px;
+  }
+
+  header nav button {
+    padding: 10px 20px;
+    background-color: #4d81bb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span {
+    color: #4d81bb;
+  }
+
+  .hero p {
+    margin-bottom: 40px;
+    color: #666;
+  }
+
+  .app-buttons img {
+    height: 50px;
+    margin: 10px;
+  }
+
+  .daily-review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .daily-review img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .hero-images img {
+    height: 400px;
+    margin: 20px;
+  }
+
+  .features {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+  }
+
+  .features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .feature-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+  }
+
+  .solution {
+    padding: 60px 20px;
+    background-color: #fff;
+  }
+
+  .solution-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+
+  .solution-content img {
+    height: 450px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .blog {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+  }
+
+  .blog h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .blog-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .blog-post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .faq {
+    padding: 60px 20px;
+    background-color: #fff;
+  }
+
+  .faq h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .faq-item {
+    margin-bottom: 20px;
+  }
+
+  .faq-question {
+    font-weight: bold;
+  }
+
+  .faq-answer {
+    padding: 10px 0;
+    color: #666;
+  }
+
+  footer {
+    background-color: #4d81bb;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .social img {
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  footer .footer-links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  footer .footer-column {
+    text-align: left;
+  }
+
+  footer .footer-column h3 {
+    margin-bottom: 10px;
+  }
+
+  footer .footer-column a {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  footer p {
+    margin-top: 20px;
+  }
+
+  .pricing {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    padding-bottom: 150px;
+  }
+
+  .pricing h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .pricing-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    padding-bottom: 40px;
+  }
+
+  .pricing-item h3 {
+    margin-bottom: 10px;
+  }
+
+  .pricing-item p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .pricing-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    color: #666;
+  }
+
+  .pricing-item ul li {
+    margin-bottom: 10px;
+  }
+
+  .pricing-item a {
+    padding: 10px 20px;
+    background-color: #4d81bb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .introduction {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 0px;
+  }
+
+  .introduction p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+  }
+</style>
