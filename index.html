@@ -31,6 +31,7 @@
       <p>Quickly record tasks, events, and notes, as well as set goals, consolidating scattered notes.</p>
       <div class="app-buttons">
         <a href="https://apps.apple.com/us/app/id6499578629"><img src="./imgs/appstore.webp" alt="App Store"></a>
+        <a onclick="return confirmDownload()" class="android-btn" href="https://env-00jy5sfcca3m.normal.cloudstatic.cn/bujo/bujo-test-v1.0.3-0115.apk">安卓测试版</a>
       </div>
       <div class="hero-images" style="position: relative;">
         <img src="./imgs/iphone.png" alt="App Image 2">
@@ -138,6 +139,22 @@
 
 </html>
 
+<script>
+function confirmDownload() {
+  const ok = alert(
+    "⚠️ 提醒：\n\n" +
+    "测试版本可能存在不稳定情况。\n" +
+    "无法保证数据安全。\n" +
+    "可以一直点击试用7天使用会员功能。\n\n" +
+    "点击确定继续下载。"
+  );
+  // alert 没有返回值，如果你想「取消下载」需要用 confirm：
+  // return confirm("...");
+
+  return true; // 继续跳转下载
+}
+</script>
+
 <style>
   /* styles.css */
   body {
@@ -221,9 +238,15 @@
     color: #666;
   }
 
+  .app-buttons{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
   .app-buttons img {
     height: 50px;
-    margin: 10px;
+    margin: 5px;
   }
 
   .daily-review {
@@ -250,6 +273,23 @@
     .hub{
       display: none;
     }
+  }
+
+  .android-btn{
+    width: 168px;
+    height: 50px;
+    flex-shrink: 0;
+    margin: 5px;
+    margin-bottom: 9px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
   }
 
   .features {
