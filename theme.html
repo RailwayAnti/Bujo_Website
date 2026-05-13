@@ -126,10 +126,11 @@
       min-height: 148px;
       padding: clamp(22px, 4vw, 34px);
       border-radius: var(--radius);
+      border: 1px solid var(--line);
       background:
         linear-gradient(120deg, rgba(77, 129, 187, 0.14), rgba(255, 255, 255, 0.74)),
         #fff;
-      box-shadow: var(--shadow);
+      /* box-shadow: var(--shadow); */
     }
 
     .notice h2 {
@@ -587,7 +588,7 @@
         <div class="notice">
           <h2>欢迎投稿你的主题文件。</h2>
           <p>
-            投稿可以发送主题文件(json)、预览图片、主题名称和作者名到
+            投稿可以发送主题文件(json)、预览图片、主题名称、主题描述和作者名到
             <a class="mail-link" href="mailto:railwayanti@gmail.com">railwayanti@gmail.com</a>。
             审核整理后会按作者展示在这里。
           </p>
